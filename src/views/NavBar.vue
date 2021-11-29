@@ -4,7 +4,7 @@
       <nav-bar left-text="左侧" title="标题" right-text="按钮" :left-arrow="true"></nav-bar>
       <p class="title">高级用法</p>
       <nav-bar left-text="左侧" title="标题" :left-arrow="true">
-        <ml-icon name="home" slot="right" size="18px" color="#ab97c3"></ml-icon>
+        <sun-icon name="home" slot="right" size="18px" color="#ab97c3"></sun-icon>
       </nav-bar>
   </div>
 </template>

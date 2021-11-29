@@ -10,9 +10,9 @@
   </div>
 </template>
 <script>
-import Utils from "../vue-tool/packages/Utils";
+import Utils from "../sun-ui/packages/Utils";
 export default {
-  name: "INavBar",
+  name: "Utils",
   data() {
     return {
       value: "",

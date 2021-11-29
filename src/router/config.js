@@ -1,5 +1,5 @@
 function compooentUrl(url) {
-  return require(`@/vue-tool/packages/${url}/src/index.md`)
+  return require(`@/sun-ui/packages/${url}/src/index.md`)
 }
 
 function domeUrl(url) {

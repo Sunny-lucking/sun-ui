@@ -11,7 +11,7 @@
     </div>
 </template>
 <script>
-import mlToast from "../vue-tool/packages/Toast";
+import mlToast from "../sun-ui/packages/Toast";
 export default {
   name: "mlToast",
   data() {

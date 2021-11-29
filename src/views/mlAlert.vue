@@ -9,7 +9,7 @@
     </div>
 </template>
 <script>
-import mlAlert from "../vue-tool/packages/mlAlert";
+import mlAlert from "../sun-ui/packages/mlAlert";
 export default {
   name: "Button",
   data() {

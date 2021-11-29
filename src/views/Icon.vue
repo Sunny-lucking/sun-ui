@@ -1,16 +1,16 @@
 <template>
     <div style="background: white;margin: 0;">
-        <ml-icon name="home"></ml-icon>
+        <sun-icon name="home"></sun-icon>
         <p>自定义大小</p>
-        <ml-icon name="home" size="16px"></ml-icon>
-        <ml-icon name="heart" size="32px"></ml-icon>
-        <ml-icon name="hand-peace-o" size="48px"></ml-icon>
+        <sun-icon name="home" size="16px"></sun-icon>
+        <sun-icon name="heart" size="32px"></sun-icon>
+        <sun-icon name="hand-peace-o" size="48px"></sun-icon>
         <p>自定义颜色</p>
-        <ml-icon name="home" color="#49b683"></ml-icon>
-        <ml-icon name="home" color="#ab97c3"></ml-icon>
+        <sun-icon name="home" color="#49b683"></sun-icon>
+        <sun-icon name="home" color="#ab97c3"></sun-icon>
         <p class="title">更多图标(颜色可自定义)</p>
         <div  v-for="(item,index) in obj" :key="index">
-          <ml-icon :name="item" color="#ab97c3"></ml-icon>
+          <sun-icon :name="item" color="#ab97c3"></sun-icon>
           <span>{{item}}</span>
         </div>
         <p class="title">查看更多可看( <a href="http://fontawesome.dashgame.com/">Font Awesome 4.7.0</a> )</p>

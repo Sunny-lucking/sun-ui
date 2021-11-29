@@ -21,7 +21,7 @@ module.exports = {
       // template: 'index.html'
     },
     index2: {
-      entry: './src/manoeuvre.js',
+      entry: './src/mobile.js',
       // template: 'index2.html'
     },
   },

@@ -64,7 +64,7 @@
 </template>
 
 <script>
-import mlAlert from "../vue-tool/packages/mlAlert";
+import mlAlert from "../sun-ui/packages/mlAlert";
 export default {
   name: "index",
   data() {
