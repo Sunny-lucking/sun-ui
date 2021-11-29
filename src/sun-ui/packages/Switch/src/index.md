@@ -13,7 +13,7 @@
 
 
 ```html
-<ml-switch v-model="checked"></ml-switch>
+<sun-switch v-model="checked"></sun-switch>
 ```
 ```javascript
  export default {

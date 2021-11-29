@@ -11,15 +11,15 @@
     </div>
 </template>
 <script>
-import mlToast from "../sun-ui/packages/Toast";
+import sunToast from "../sun-ui/packages/Toast";
 export default {
-  name: "mlToast",
+  name: "sunToast",
   data() {
     return {};
   },
   methods: {
     success(){
-      mlToast({
+      sunToast({
         message: '成功',
         position: "middle",
         duration: 2000,
@@ -27,7 +27,7 @@ export default {
       });
     },
     loading(){
-      mlToast({
+      sunToast({
         message: '加载中',
         position: "middle",
         duration: 2000,
@@ -35,7 +35,7 @@ export default {
       });
     },
     fail(){
-      mlToast({
+      sunToast({
         message: '失败',
         position: "middle",
         duration: 2000,
@@ -43,7 +43,7 @@ export default {
       });
     },
     go(s) {
-      mlToast({
+      sunToast({
         message: s,
         position: "middle",
         duration: 2000,

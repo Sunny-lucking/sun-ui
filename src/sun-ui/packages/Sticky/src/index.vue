@@ -1,12 +1,12 @@
 <template>
-  <div class="ml-sticky" :style="style">
+  <div class="sun-sticky" :style="style">
     <slot></slot>
   </div>
 </template>
 
 <script>
 export default {
-  name: "ml-sticky",
+  name: "sun-sticky",
   props: {
     top: {
       type: [Number, String],
@@ -24,7 +24,7 @@ export default {
 };
 </script>
 <style>
-.ml-sticky {
+.sun-sticky {
   position: sticky;
   top: 30px;
 }

@@ -14,9 +14,9 @@
 
 
 ```html
-<ml-sticky :top="40">
+<sun-sticky :top="40">
     <span>40</span>
-</ml-sticky>
+</sun-sticky>
 ```
 
 ### API

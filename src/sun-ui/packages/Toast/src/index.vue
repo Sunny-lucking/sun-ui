@@ -14,7 +14,7 @@
 * @param {boolean} [message=xxxx] - 内容
 * @param {boolean} [icon=xxxx] - 成功或失败提示框  success/loading/fail/clear
 * @example
-    mlToast({
+    sunToast({
         message: "提示信息",
         position:"top",
         duration:1000,

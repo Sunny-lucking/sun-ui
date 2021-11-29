@@ -64,7 +64,7 @@
 </template>
 
 <script>
-import mlAlert from "../sun-ui/packages/mlAlert";
+import sunAlert from "../sun-ui/packages/sunAlert";
 export default {
   name: "index",
   data() {
@@ -92,7 +92,7 @@ export default {
           { name: "Loading", router: "Loadings", value: "加载" },
         ],
         反馈组建: [
-          { name: "mlAlert", router: "mlAlert", value: "弹框" },
+          { name: "sunAlert", router: "sunAlert", value: "弹框" },
           { name: "Toast", router: "Toast", value: "轻提示" },
           { name: "Popup", router: "Popup", value: "弹出层" },
         ],
@@ -118,7 +118,7 @@ export default {
     this.iframeSrc = `index2.html` + location.hash;
     if (document.body.offsetWidth < 400) {
       this.mobile = true;
-      mlAlert({
+      sunAlert({
         title: "提示",
         content: "建议采用PC端查看应用",
         confirmButtonText: "确认",

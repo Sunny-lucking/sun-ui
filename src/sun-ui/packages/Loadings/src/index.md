@@ -12,17 +12,17 @@
 #### 基础用法
 
 ```html
-<ml-loading icon="rolling"></ml-loading>
+<sun-loading icon="rolling"></sun-loading>
 ```
 #### 自定义大小
 
 ```html
-<ml-loading icon="rolling" size="100"></ml-loading>
+<sun-loading icon="rolling" size="100"></sun-loading>
 ```
 #### 自定义颜色
 
 ```html
-<ml-loading icon="rolling" color="#49b683" size="100"></ml-loading>
+<sun-loading icon="rolling" color="#49b683" size="100"></sun-loading>
 ```
 ### API
 

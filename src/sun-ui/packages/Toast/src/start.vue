@@ -5,7 +5,7 @@
   </div>
   <div v-else class="loading">
     <div>
-      <ml-loading icon="ripple"></ml-loading>
+      <sun-loading icon="ripple"></sun-loading>
       <div>
         {{ message || "加载中..." }}
       </div>

@@ -23,15 +23,9 @@
  * @param {string} [cancelButtonText=取消] - 取消按钮内容
  * @param {string} [confirmButtonText=确认] - 确认按钮内容
  * @example
- * mlAlert('提示1','内容1').then(res=>{
-      console.log(res)
-   })
-   mlAlert({title:"xxxx",content:xxx}).then(res=>{
-      console.log(res)
-   })
  */
 export default {
-  name: "mlAlert",
+  name: "sunAlert",
   data() {
     return {
       callback: null

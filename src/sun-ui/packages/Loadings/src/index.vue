@@ -6,29 +6,28 @@
 <script>
 import min from "./index.js";
 export default {
-  name: "mlLoading",
+  name: "sunLoading",
   mixins: [min],
   props: {
     icon: String,
     color: {
       default: "",
-      type: String
+      type: String,
     },
     size: {
       default: "70px",
-      type: String
-    }
+      type: String,
+    },
   },
   data() {
     return {
       indexs: 20,
-      html:
-        `<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>`
+      html: `<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>`,
     };
   },
   methods: {},
   components: {},
-  mounted: function() {}
+  mounted: function () {},
 };
 </script>
 <style>

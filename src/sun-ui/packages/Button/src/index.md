@@ -12,13 +12,13 @@ Vue.use(Button);
 #### 简单用法
 
 ```html
-<ml-button size="large" class="button" icon="back" type="primary">按钮</ml-button>
+<sun-button size="large" class="button" icon="back" type="primary">按钮</sun-button>
 ```
 
 #### 幽灵按钮
 
 ```html
-<ml-button size="large" class="button" :plain="true" type="primary">幽灵按钮</ml-button>
+<sun-button size="large" class="button" :plain="true" type="primary">幽灵按钮</sun-button>
 ```
 ### API 
 

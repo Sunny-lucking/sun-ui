@@ -9,7 +9,7 @@
     </div>
 </template>
 <script>
-import mlAlert from "../sun-ui/packages/mlAlert";
+import sunAlert from "../sun-ui/packages/sunAlert";
 export default {
   name: "Button",
   data() {
@@ -17,12 +17,12 @@ export default {
   },
   methods: {
     go() {
-      mlAlert("提示1", "内容1").then(res => {
+      sunAlert("提示1", "内容1").then(res => {
         console.log(res);
       });
     },
     go1() {
-      mlAlert({
+      sunAlert({
         content: "点个赞吧",
         success: function(){
         
@@ -30,7 +30,7 @@ export default {
       });
     },
     go3(){
-      mlAlert({
+      sunAlert({
         title:"提示",
         content: "点个赞吧",
         confirmButtonText:"yes",
@@ -41,7 +41,7 @@ export default {
       });
     },
     go2(){
-      mlAlert({
+      sunAlert({
         title:"提示",
         content: "点个赞吧",
         cancelButtonText:"no",

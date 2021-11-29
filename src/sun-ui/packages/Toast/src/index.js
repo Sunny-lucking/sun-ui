@@ -1,11 +1,11 @@
 import { hq, sc } from '../../../src/unity'
-function mlToast(props) {
-    mlToast.clear()
+function sunToast(props) {
+    sunToast.clear()
     setTimeout(() => {
-        mlToast.clear()
+        sunToast.clear()
     }, props.duration || 3000)
 }
-mlToast.clear = function () {
+sunToast.clear = function () {
     if (hq('.ml-toast')) {
         sc(hq('.ml-toast'))
     }
@@ -14,12 +14,12 @@ mlToast.clear = function () {
     }
 }
 
-mlToast.success = function (props) {
+sunToast.success = function (props) {
     setTimeout(() => {
-        mlToast.clear()
+        sunToast.clear()
     }, props.duration || 3000)
 }
-mlToast.fail = function (props) {
-    mlToast.success(props, 'fail')
+sunToast.fail = function (props) {
+    sunToast.success(props, 'fail')
 }
-export default mlToast
+export default sunToast

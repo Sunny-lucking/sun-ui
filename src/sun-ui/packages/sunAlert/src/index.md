@@ -1,20 +1,20 @@
-## mlAlert 提示框/弹框
+## sunAlert 提示框/弹框
 
 ### 使用指南
 
 ```javascript
-  import { mlAlert } from 'sun-ui';
+  import { sunAlert } from 'sun-ui';
 ```
 ### 代码演示
 
 #### 消息提示
 
 ```javascript
-  mlAlert("标题", "弹框内容").then(() => {
+  sunAlert("标题", "弹框内容").then(() => {
     // on close
   });
 
-  mlAlert({
+  sunAlert({
     title: "提示",
     content: "点个赞吧",
     success: function(){
@@ -26,7 +26,7 @@
 #### 自定义按钮内容
 
 ```javascript
-  mlAlert({
+  sunAlert({
     title:"提示",
     content: "点个赞吧",
     cancelButtonText:"no",
@@ -36,7 +36,7 @@
     }
   });
 
-  mlAlert({
+  sunAlert({
     title:"提示",
     content: "点个赞吧",
     confirmButtonText:"yes",

@@ -3,16 +3,16 @@
     <img src="@/assets/favicon.png">
     <p class="ptex">vueTool，简洁，便利！</p>
     <div class="liLink" v-for="(item,key,index) in message" :key="index">
-      <ml-cell @click="messageUfclick(index)" :height="'47px'" :size="'16px'" :title="key" is-link></ml-cell>
+      <sun-cell @click="messageUfclick(index)" :height="'47px'" :size="'16px'" :title="key" is-link></sun-cell>
       <div class="liLinks" :style="style(message[key],messageUf[index])">
-        <ml-cell
+        <sun-cell
           @click="router(items.router)"
           ref="cell"
           :title="items.value"
           is-link
           v-for="(items,index) in message[key]"
           :key="index"
-        ></ml-cell>
+        ></sun-cell>
       </div>
     </div>
   </div>

@@ -10,8 +10,8 @@ import Loading from '../packages/Loadings'
 import Popup from '../packages/Popup'
 import Switch from '../packages/Switch'
 // 请提示  不需要注册组建
-import mlAlert from '../packages/mlAlert'
-import mlToast from '../packages/Toast'
+import sunAlert from '../packages/sunAlert'
+import sunToast from '../packages/Toast'
 import InfiniteScroll from '../packages/InfiniteScroll'
 import mlLazy from '../packages/mlLazy'
 import Utils from '../packages/Utils'
@@ -32,8 +32,8 @@ export {
   install,
   Button,
   Cell,
-  mlAlert,
-  mlToast,
+  sunAlert,
+  sunToast,
   Swipe,
   mlLazy,
   InfiniteScroll,

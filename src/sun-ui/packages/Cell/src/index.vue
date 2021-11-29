@@ -1,26 +1,29 @@
 <template>
   <div class="cell">
     <div
-      class="ml-cell"
+      class="sun-cell"
       @click="handleClick"
       :style="`height:${height};line-height:${height};font-size:${size}`"
     >
-      <span :style="`float:${seat};${styleIcon}`" :class="icon ? icon + ' iconfont' : ''"></span>
-      <span :style="styleTitle">{{title}}</span>
-      <div class="ml-cell-right">
-        <span :style="styleValue">{{value}}</span>
+      <span
+        :style="`float:${seat};${styleIcon}`"
+        :class="icon ? icon + ' iconfont' : ''"
+      ></span>
+      <span :style="styleTitle">{{ title }}</span>
+      <div class="sun-cell-right">
+        <span :style="styleValue">{{ value }}</span>
         <i v-if="isLink" class="fa fa-angle-right fa-lg" aria-hidden="true"></i>
       </div>
     </div>
-    <div class="ml-cell-label" v-if="label">
-      <slot>{{label}}</slot>
+    <div class="sun-cell-label" v-if="label">
+      <slot>{{ label }}</slot>
     </div>
   </div>
 </template>
 
 <script>
 /**
- * ml-cell
+ * sun-cell
  * @module components/button
  * @desc 按钮
  * @param {string} [title=名字] - 名字/标题
@@ -33,14 +36,14 @@
  * @param {string} [style=string] - 根据key自动添加style 支持 styleTitle  styleValue
  * * @param {string} [is-link=false] - 是否显示箭头
  * @example
- *  <ml-cell title="标题" icon="icon-arrowright" seat="left" label="描述信息" value="这是内容" @click="age"></ml-cell>
+ *  <sun-cell title="标题" icon="icon-arrowright" seat="left" label="描述信息" value="这是内容" @click="age"></sun-cell>
  */
 export default {
-  name: "ml-cell",
+  name: "sun-cell",
   methods: {
     handleClick(evt) {
       this.$emit("click", evt);
-    }
+    },
   },
   props: {
     title: String,
@@ -50,21 +53,21 @@ export default {
     styleIcon: String,
     styleValue: String,
     styleTitle: String,
-    isLink:Boolean,
+    isLink: Boolean,
     height: {
       default: "38px",
-      type: String
+      type: String,
     },
     size: {
       default: "13px",
-      type: String
+      type: String,
     },
     seat: {
       default: "right",
-      type: String
-    }
+      type: String,
+    },
   },
-  mounted() {}
+  mounted() {},
 };
 </script>
 <style scoped>
@@ -76,7 +79,7 @@ export default {
   background: #fff;
   width: 100%;
 }
-.ml-cell {
+.sun-cell {
   margin-left: 3%;
   margin-right: 3%;
   border-bottom: 1px solid #faf6f6;
@@ -86,11 +89,11 @@ export default {
   line-height: 38px;
   border-top: 0;
 }
-.ml-cell-right {
+.sun-cell-right {
   float: right;
   color: #999;
 }
-.ml-cell-label {
+.sun-cell-label {
   font-size: 12px;
   color: #999;
   margin-left: 3%;

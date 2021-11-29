@@ -1,7 +1,7 @@
 <template>
   <button 
   @click="handleClick"
-  :disabled=disabled
+  :disabled="disabled"
   :class="plain ? 'ghost' : ''"
   ><slot></slot></button>
 </template>
@@ -15,10 +15,10 @@
  * @param {boolean} [disabled=false] - 禁用
  * @param {boolean} [plain=false] - 幽灵按钮
  * @example
- * <ml-button size="large" icon="back" type="primary">按钮</ml-button>
+ * <sun-button size="large" icon="back" type="primary">按钮</sun-button>
  */
 export default {
-  name: "ml-button",
+  name: "sun-button",
   methods: {
     handleClick(evt) {
       this.$emit("click", evt);

@@ -4,7 +4,7 @@
     <button @click="tankuang1 = true">弹出框</button>
     <p class="title">弹出位置</p>
     <ml-popup v-model="tankuang1" position="center"
-      ><div><ml-loading icon="ripple"></ml-loading></div
+      ><div><sun-loading icon="ripple"></sun-loading></div
     ></ml-popup>
     <button @click="tankuang2 = true">上面弹框</button>
     <ml-popup v-model="tankuang2" position="top"

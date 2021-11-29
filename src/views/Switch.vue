@@ -1,12 +1,12 @@
 <template>
   <div style="width: 90%;margin: 0 auto;">
     <p class="title">基础用法</p>
-    <ml-switch v-model="SwitchType"></ml-switch>
+    <sun-switch v-model="SwitchType"></sun-switch>
   </div>
 </template>
 <script >
   export default {
-  name: "mlswitch",
+  name: "sunswitch",
   data() {
     return {
       SwitchType:false

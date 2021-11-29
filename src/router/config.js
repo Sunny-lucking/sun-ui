@@ -31,12 +31,12 @@ var router = [{
   }
 },
 {
-  path: '/mlAlert',
-  name: 'mlAlert',
-  component: r => require.ensure([], () => r(domeUrl('mlAlert')), 'mlAlert'),
-  dome: r => require.ensure([], () => r(compooentUrl('mlAlert')), 'mlAlert'),
+  path: '/sunAlert',
+  name: 'sunAlert',
+  component: r => require.ensure([], () => r(domeUrl('sunAlert')), 'sunAlert'),
+  dome: r => require.ensure([], () => r(compooentUrl('sunAlert')), 'sunAlert'),
   meta: {
-    name: "mlAlert 弹出框"
+    name: "sunAlert 弹出框"
   }
 },
 {

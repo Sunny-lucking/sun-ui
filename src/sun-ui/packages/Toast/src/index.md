@@ -3,13 +3,13 @@
 ### 使用指南
 
 ```javascript
-  import { mlToast } from 'sun-ui';
+  import { sunToast } from 'sun-ui';
 ```
 
 #### 简单用法
 
 ```javascript
-  mlToast({
+  sunToast({
     message: "提示信息",
     position: "middle",
     duration: 1000
@@ -20,7 +20,7 @@
 `loading`可以使用本组建的任意`Loading`动画
 
 ```javascript
-  mlToast({
+  sunToast({
      message: '加载中',
      position: "middle",
      duration: 2000,
@@ -33,13 +33,13 @@
 #### 基础用法
 
 ```javascript
-mlToast.fail('失败');
-mlToast.success('成功');
+sunToast.fail('失败');
+sunToast.success('成功');
 ```
 #### 高级用法
 
 ```javascript
-  mlToast({
+  sunToast({
      message: '成功',
      position: "middle",
      duration: 2000,
@@ -47,7 +47,7 @@ mlToast.success('成功');
   });
 ```
 ```javascript
-  mlToast({
+  sunToast({
      message: '失败',
      position: "middle",
      duration: 2000,
@@ -59,7 +59,7 @@ mlToast.success('成功');
 #### 关闭提示
 
 ```javascript
-  mlToast.clear()
+  sunToast.clear()
 ```
 
 
@@ -76,6 +76,6 @@ mlToast.success('成功');
 
 | 参数 | 说明 | 类型 |
 |------|------|------|
-| mlToast.success | 展示成功提示 | `options | message` |
-| mlToast.fail | 展示失败提示 | `options | message` | 
-| mlToast.clear | 关闭提示 | `options | message` |
+| sunToast.success | 展示成功提示 | `options | message` |
+| sunToast.fail | 展示失败提示 | `options | message` | 
+| sunToast.clear | 关闭提示 | `options | message` |

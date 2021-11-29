@@ -2,7 +2,7 @@ import Vue from 'vue'
 import mlAlertMsg from './index.vue'
 import { monitoring, hq, cj, sc } from '../../../src/unity'
 var alertMsg = {};
-const mlAlert = function (options) {
+const Alert = function (options) {
     if (typeof options == 'object') {
         alertMsg = options
     } else {
@@ -24,4 +24,4 @@ const mlAlert = function (options) {
         })
     });
 }
-export default mlAlert
+export default Alert
