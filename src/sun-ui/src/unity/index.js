@@ -11,26 +11,26 @@ function monitoring(el, key, callback) {
         }
     })
 }
-// 获取元素 - hq
+// 获取元素 - getElement
 // 元素名字
-function hq(el) {
+function getElement(el) {
     return document.querySelector(el)
 }
 // 创建元素并且添加 默认body
 // 值1 创建的元素   值2父元素的名字 默认body
-function cj(el,main){
+function createElement(el,main){
     var div = document.createElement(el)
-    main ? hq(main).appendChild(div) : document.body.appendChild(div)
+    main ? getElement(main).appendChild(div) : document.body.appendChild(div)
     return div
 }
 // 删除元素 默认body  值1删除元素的名字  父元素的名字 默认body
-function sc(el,main){
-    main ? hq(main).appendChild(el) : document.body.removeChild(el)
+function deleteElement(el,main){
+    main ? getElement(main).appendChild(el) : document.body.removeChild(el)
     return true
 }
 export {
     monitoring,
-    hq,
-    cj,
-    sc
+    getElement,
+    createElement,
+    deleteElement
 }
