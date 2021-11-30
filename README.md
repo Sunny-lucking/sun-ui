@@ -1,19 +1,5 @@
 # my_ui
 
-## Project setup
-```
-npm install
-```
+## 1. 基于master创建自己的分支
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## 2. 开发好测试无问题后，提交 pr，merge到master
