@@ -25,25 +25,16 @@
     </div>
     <div class="left" v-if="!mobile">
       <ul>
-        <p class="zhinan">开发指南</p>
-        <p class="list" @click="briefClick('brief')">快速上手</p>
-        <p class="title-left">方法</p>
-        <li
-          @click="routerClick(item.router)"
-          :key="index + 1000"
-          v-for="(item, index) in way"
-        >
-          <span>{{ item.value }}</span>
-        </li>
-        <div class="mari" v-for="(items, key, index) in message" :key="index">
+        <div class="mari" v-for="(item, key, index) in listData" :key="index">
           <p class="title-left">{{ key }}</p>
           <li
-            @click="routerClick(item.router)"
+            v-for="(subItem, index) in listData[key]"
+            :class="{ active: compon === subItem.router }"
+            @click="routerClick(subItem.router)"
             :key="index"
-            v-for="(item, index) in message[key]"
           >
-            {{ item.name }}
-            <span>{{ item.value }}</span>
+            <span>{{ subItem.name }}</span>
+            <span>{{ subItem.value }}</span>
           </li>
         </div>
       </ul>
@@ -65,56 +56,29 @@
 
 <script>
 import sunAlert from "../sun-ui/packages/sunAlert";
+import {listDataMixin} from "@/constants/listDataMixin";
 export default {
   name: "index",
+  mixins: [listDataMixin],
   data() {
     return {
       compon: "",
       mobile: false,
       iframeSrc: "index2.html#/brief",
-      way: [
-        { name: "工具方法", router: "Utils", value: "工具方法" },
-        { name: "图片处理", router: "Picture", value: "图片处理" },
-        { name: "数据缓存", router: "Cache", value: "数据缓存" },
-        { name: "模拟表单", router: "FormHttp", value: "模拟表单" },
-      ],
-      message: {
-        基础组件: [
-          { name: "Icon", router: "Icon", value: "图标" },
-          { name: "Cell", router: "Cell", value: "单元格" },
-          { name: "List", router: "List", value: "瀑布流滚动" },
-          { name: "NavBar", router: "NavBar", value: "导航栏" },
-          { name: "Button", router: "Button", value: "按钮" },
-          { name: "Swipe", router: "Swipe", value: "轮播" },
-          { name: "Sticky", router: "Sticky", value: "粘贴定位" },
-          { name: "Switch", router: "Switch", value: "开关" },
-          { name: "mlLazy", router: "mlLazy", value: "图片懒加载" },
-          { name: "Loading", router: "Loadings", value: "加载" },
-        ],
-        反馈组建: [
-          { name: "sunAlert", router: "sunAlert", value: "弹框" },
-          { name: "Toast", router: "Toast", value: "轻提示" },
-          { name: "Popup", router: "Popup", value: "弹出层" },
-        ],
-      },
     };
   },
   methods: {
-    routerClick: function (rou) {
+    routerClick(rou) {
       this.$router.push({ name: rou });
       this.compon = rou;
       this.iframeSrc = `index2.html#/${rou}`;
-    },
-    briefClick(url) {
-      this.$router.push({ path: url });
-      this.iframeSrc = `index2.html#/${url}`;
     },
     fluidicon(url) {
       window.open(url);
     },
   },
   components: {},
-  created: function () {
+  created() {
     this.iframeSrc = `index2.html` + location.hash;
     if (document.body.offsetWidth < 400) {
       this.mobile = true;
@@ -169,10 +133,43 @@ h3 {
 }
 .left {
   height: 91%;
-}
-.left p {
-  font-weight: 800;
-  color: #333;
+  overflow-y: auto;
+  width: 230px;
+  position: fixed;
+  top: 60px;
+
+  p {
+    font-weight: 800;
+    color: #333;
+  }
+
+  ul {
+    border-right: 1px solid #eee;
+    min-height: 100%;
+    text-indent: 9px;
+    li {
+      list-style: none;
+      height: 40px;
+      line-height: 40px;
+      font-size: 13px;
+      color: #333;
+
+      &:hover,
+      &.active {
+        color: peru;
+      }
+
+      span {
+        &:not(:first-child):last-child {
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .main {
@@ -184,13 +181,6 @@ h3 {
   position: relative;
   left: -100px;
   margin-top: 96px;
-}
-
-.left {
-  overflow-y: auto;
-  width: 230px;
-  position: fixed;
-  top: 60px;
 }
 
 .right {
@@ -244,28 +234,5 @@ h3 {
       margin-left: 10px;
     }
   }
-}
-
-ul li {
-  list-style: none;
-  height: 40px;
-  line-height: 40px;
-  font-size: 13px;
-  color: #333;
-}
-
-ul li > span {
-  color: #999;
-  font-size: 12px;
-}
-
-ul {
-  border-right: 1px solid #eee;
-  min-height: 100%;
-  text-indent: 9px;
-}
-
-ul li:hover {
-  color: rgb(128, 158, 182);
 }
 </style>

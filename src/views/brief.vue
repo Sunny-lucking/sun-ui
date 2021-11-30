@@ -1,16 +1,22 @@
 <template>
-  <div style="padding-bottom: 24px;">
-    <img src="@/assets/favicon.png">
+  <div style="padding-bottom: 24px" class="mobile-show">
+    <img src="@/assets/favicon.png" />
     <p class="ptex">vueTool，简洁，便利！</p>
-    <div class="liLink" v-for="(item,key,index) in message" :key="index">
-      <sun-cell @click="messageUfclick(index)" :height="'47px'" :size="'16px'" :title="key" is-link></sun-cell>
-      <div class="liLinks" :style="style(message[key],messageUf[index])">
+    <div class="liLink" v-for="(item, key, index) in message" :key="index">
+      <sun-cell
+        @click="messageUfclick(index)"
+        :height="'47px'"
+        :size="'16px'"
+        :title="key"
+        is-link
+      ></sun-cell>
+      <div class="liLinks" :style="style(message[key], messageUf[index])">
         <sun-cell
           @click="router(items.router)"
           ref="cell"
           :title="items.value"
           is-link
-          v-for="(items,index) in message[key]"
+          v-for="(items, index) in message[key]"
           :key="index"
         ></sun-cell>
       </div>
@@ -19,18 +25,21 @@
 </template>
 <script>
 import indexs from "./index.vue";
+import { listDataMixin } from "@/constants/listDataMixin";
+
 export default {
   name: "Button",
+  mixins: [listDataMixin],
   data() {
     return {
       message: [],
-      messageUf: []
+      messageUf: [],
     };
   },
   methods: {
     style(item, bller) {
       return {
-        height: !bller ? "0px" : `${item.length * 39}px`
+        height: !bller ? "0px" : `${item.length * 39}px`,
       };
     },
     router(router) {
@@ -40,20 +49,25 @@ export default {
       var msg = JSON.parse(JSON.stringify(this.messageUf));
       msg[index] = !msg[index];
       this.messageUf = msg;
-    }
+    },
   },
   created() {
     var messageUf = [];
-    var index = Object.keys(indexs.data().message).length;
+    var index = Object.keys(this.listData).length;
     for (var i = 0; i < index; i++) {
       messageUf.push(false);
     }
     this.messageUf = messageUf;
-    this.message = indexs.data().message;
-  }
+    this.message = this.listData;
+  },
 };
 </script>
-<style scoped>
+<style scoped lang="scss">
+.mobile-show {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
 img {
   width: 37%;
   display: block;
