@@ -3,21 +3,21 @@
     <div class="nav" v-if="!mobile">
       <img
         class="nav-logo"
-        @click="briefClick('brief')"
+        @click="routerClick('brief')"
         src="@/assets/favicon.png"
         alt
       />
-      <div class="nav-title" @click="briefClick('brief')">阳光 UI</div>
+      <div class="nav-title" @click="routerClick('brief')">阳光 UI</div>
       <div class="right-link">
         <img
           src="@/assets/fluidicon.png"
-          @click="fluidicon('https://github.com/Sunny-lucking/sun-ui')"
+          @click="onGotoAddress('https://github.com/Sunny-lucking/sun-ui')"
           class="fluidicon"
           alt
         />
         <img
           src="@/assets/c426a1116301d1fd178c51522484127a.png"
-          @click="fluidicon('https://www.npmjs.com/package/vue-tool')"
+          @click="onGotoAddress('https://www.npmjs.com/package/vue-tool')"
           class="npm"
           alt
         />
@@ -25,10 +25,10 @@
     </div>
     <div class="left" v-if="!mobile">
       <ul>
-        <div class="mari" v-for="(item, key, index) in listData" :key="index">
-          <p class="title-left">{{ key }}</p>
+        <div v-for="(item, key, index) in listData" :key="index">
+          <p class="title-left">{{ item.name }}</p>
           <li
-            v-for="(subItem, index) in listData[key]"
+            v-for="(subItem, index) in listData[key].list"
             :class="{ active: compon === subItem.router }"
             @click="routerClick(subItem.router)"
             :key="index"
@@ -56,7 +56,7 @@
 
 <script>
 import sunAlert from "../sun-ui/packages/sunAlert";
-import {listDataMixin} from "@/constants/listDataMixin";
+import { listDataMixin } from "@/constants/listDataMixin";
 export default {
   name: "index",
   mixins: [listDataMixin],
@@ -73,7 +73,7 @@ export default {
       this.compon = rou;
       this.iframeSrc = `index2.html#/${rou}`;
     },
-    fluidicon(url) {
+    onGotoAddress(url) {
       window.open(url);
     },
   },
@@ -94,9 +94,6 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-.mari {
-  height: auto !important;
-}
 .title-left {
   font-size: 15px;
   font-weight: 800 !important;

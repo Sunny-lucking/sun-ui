@@ -1,65 +1,53 @@
 <template>
   <div style="padding-bottom: 24px" class="mobile-show">
     <img src="@/assets/favicon.png" />
-    <p class="ptex">vueTool，简洁，便利！</p>
-    <div class="liLink" v-for="(item, key, index) in message" :key="index">
-      <sun-cell
-        @click="messageUfclick(index)"
-        :height="'47px'"
-        :size="'16px'"
-        :title="key"
-        is-link
-      ></sun-cell>
-      <div class="liLinks" :style="style(message[key], messageUf[index])">
+    <p class="ptex">sun-ui，简洁，便利！</p>
+    <div class="liLink" v-for="(item, key, index) in listData" :key="index">
+      <template v-if="item.name !=='开发指南'">
         <sun-cell
-          @click="router(items.router)"
-          ref="cell"
-          :title="items.value"
+          @click="onChooseMenu(key)"
+          :height="'47px'"
+          :size="'16px'"
+          :title="item.name"
           is-link
-          v-for="(items, index) in message[key]"
-          :key="index"
         ></sun-cell>
-      </div>
+        <div class="liLinks" :style="style(item)">
+          <sun-cell
+            v-for="(subItem, index) in listData[key].list"
+            @click="onGotoCompDemo(subItem.router)"
+            ref="cell"
+            :title="subItem.value"
+            is-link
+            :key="index"
+          ></sun-cell>
+        </div>
+      </template>
     </div>
   </div>
 </template>
 <script>
-import indexs from "./index.vue";
 import { listDataMixin } from "@/constants/listDataMixin";
 
 export default {
   name: "Button",
   mixins: [listDataMixin],
   data() {
-    return {
-      message: [],
-      messageUf: [],
-    };
+    return {};
   },
   methods: {
-    style(item, bller) {
+    style(item) {
       return {
-        height: !bller ? "0px" : `${item.length * 39}px`,
+        height: !item.isExpand ? "0px" : `${item.list.length * 39}px`,
       };
     },
-    router(router) {
+    onGotoCompDemo(router) {
       this.$router.push({ path: router });
     },
-    messageUfclick(index) {
-      var msg = JSON.parse(JSON.stringify(this.messageUf));
-      msg[index] = !msg[index];
-      this.messageUf = msg;
+    onChooseMenu(key) {
+      this.listData[key].isExpand = !this.listData[key].isExpand;
     },
   },
-  created() {
-    var messageUf = [];
-    var index = Object.keys(this.listData).length;
-    for (var i = 0; i < index; i++) {
-      messageUf.push(false);
-    }
-    this.messageUf = messageUf;
-    this.message = this.listData;
-  },
+  created() {},
 };
 </script>
 <style scoped lang="scss">
