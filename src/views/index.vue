@@ -82,13 +82,6 @@ export default {
     this.iframeSrc = `index2.html` + location.hash;
     if (document.body.offsetWidth < 400) {
       this.mobile = true;
-      sunAlert({
-        title: "提示",
-        content: "建议采用PC端查看应用",
-        confirmButtonText: "确认",
-        showCancelButton: false,
-        success: function () {},
-      });
     }
   },
 };

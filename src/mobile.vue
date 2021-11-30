@@ -2,7 +2,7 @@
   <div>
     <nav-bar
       left-text
-      @click-left="se"
+      @click-left="onGoHome"
       :title="$router.history.current.meta.name"
       :left-arrow="true"
     ></nav-bar>
@@ -14,8 +14,8 @@ export default {
   name: "App",
   created: function () {},
   methods: {
-    se() {
-      this.$router.go(-1);
+    onGoHome() {
+      this.$router.push({name:'brief'});
     },
   },
 };
