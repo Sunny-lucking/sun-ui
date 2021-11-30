@@ -4,4 +4,3 @@
 
 #### 2. 开发好测试无问题后，提交 pr，merge到master
 
-test
