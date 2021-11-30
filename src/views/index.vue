@@ -11,7 +11,7 @@
       <div class="right-link">
         <img
           src="@/assets/fluidicon.png"
-          @click="fluidicon('https://github.com/1292150917/vueToolOfficial')"
+          @click="fluidicon('https://github.com/Sunny-lucking/sun-ui')"
           class="fluidicon"
           alt
         />

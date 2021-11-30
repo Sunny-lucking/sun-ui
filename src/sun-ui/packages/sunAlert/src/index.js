@@ -1,6 +1,6 @@
 import Vue from 'vue'
-import mlAlertMsg from './index.vue'
-import { monitoring, getElement, createElement, deleteElement } from '../../../src/unity'
+import AlertMsg from './index.vue'
+import { listenClick, getElement, createElement, deleteElement } from '../../../src/utils'
 var alertMsg = {};
 const Alert = function (options) {
     if (typeof options == 'object') {
@@ -10,17 +10,21 @@ const Alert = function (options) {
         alertMsg.content = arguments[0] || ''
         alertMsg.title = arguments[1] || ''
     }
-    let node = Vue.extend(mlAlertMsg)
+    let alertComponent = Vue.extend(AlertMsg)
     var div = createElement('div')
-    var ne = new node({
+    var alertInstance = new alertComponent({
         el: div,
         propsData: alertMsg
     })
-    var mlAlHt = getElement('.ml-alert')
+    var alertDiv = getElement('.ml-alert')
     return new Promise(function (resolve) {
-        monitoring(ne, 'callback', res => {
-            options.success ? options.success(res) : ''
-            deleteElement(mlAlHt) ? resolve(res) : ''
+        listenClick(alertInstance, 'clickEvent', value => {
+            if (value === 'confirm') { // 点击确认
+                options.success ? options.success(value) : ''
+            } else { // 点击取消
+                options.cancel ? options.cancel(value) : ''
+            }
+            deleteElement(alertDiv) ? resolve(value) : ''
         })
     });
 }

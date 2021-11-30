@@ -1,18 +1,30 @@
 <template>
-          <div class="ml-alert">
-        <div class="ml-alert-main">
-            <div class="ml-alert-title">{{title}}</div>
-            <div class="ml-alert-content">{{content}}</div>
-            <div class="ml-alert-button">
-                <button @click="cancelClick('cancel')" class="ml-alert-cenal" v-if="showCancelButton">{{cancelButtonText}}</button>
-                <button @click="cancelClick('confirm')" class="ml-alert-confirm" v-if="showConfirmButton">{{confirmButtonText}}</button>
-            </div>
-        </div>
+  <div class="ml-alert">
+    <div class="ml-alert-main">
+      <div class="ml-alert-title">{{ title }}</div>
+      <div class="ml-alert-content">{{ content }}</div>
+      <div class="ml-alert-button">
+        <button
+          @click="onClick('cancel')"
+          class="ml-alert-cenal"
+          v-if="showCancelButton"
+        >
+          {{ cancelButtonText }}
+        </button>
+        <button
+          @click="onClick('confirm')"
+          class="ml-alert-confirm"
+          v-if="showConfirmButton"
+        >
+          {{ confirmButtonText }}
+        </button>
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
-/** 
+/**
  * mt-header
  * @module components/button
  * @desc 按钮
@@ -28,37 +40,34 @@ export default {
   name: "sunAlert",
   data() {
     return {
-      callback: null
+      clickEvent: null,
     };
   },
   methods: {
-    handleClick(evt) {
-      this.$emit("click", evt);
+    onClick(clickEvent) {
+      this.clickEvent = clickEvent;
     },
-    cancelClick(evt) {
-      this.callback = evt;
-    }
   },
   props: {
     title: String,
     content: String,
     showConfirmButton: {
       default: true,
-      type: Boolean
+      type: Boolean,
     },
     confirmButtonText: {
       default: "确认",
-      type: String
+      type: String,
     },
     cancelButtonText: {
       default: "取消",
-      type: String
+      type: String,
     },
     showCancelButton: {
       default: true,
-      type: Boolean
-    }
-  }
+      type: Boolean,
+    },
+  },
 };
 </script>
 <style scoped>
