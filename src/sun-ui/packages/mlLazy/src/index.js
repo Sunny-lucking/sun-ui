@@ -1,12 +1,13 @@
 import Vue from 'vue'
 // 方法：  <img v-ml-lazy="item.image" alt="">
-function mlLazy() {
+function sunLazy() {
 
 }
 let elvAl = []
 var distance = 50 //距离底部的距离 
+
 var docwid = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
-mlLazy.install = () => {
+sunLazy.install = () => {
   Vue.directive('ml-lazy', {
     inserted: function (el, binding) {
       if (window.scrollY + docwid >= el.offsetTop) {
@@ -46,5 +47,5 @@ function funSrc() {
     }
   })
 }
-mlLazy.install()
-export default mlLazy
+sunLazy.install()
+export default sunLazy

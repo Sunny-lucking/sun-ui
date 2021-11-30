@@ -42,6 +42,14 @@ export const listDataMixin = {
             { name: "Popup", router: "Popup", value: "弹出层" },
           ]
         },
+        usefulComp: {
+          name: '常用组件',
+          isExpand: false,
+          list: [
+            { name: "avatar", router: "Avatar", value: "头像" },
+            { name: "baseCounter", router: "BaseCount", value: "基础倒计时" },
+          ]
+        },
       }
     }
   }

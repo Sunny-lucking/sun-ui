@@ -160,6 +160,23 @@ var router = [{
     name: "模拟表单提交"
   }
 },
-
+{
+  path: '/Avatar',
+  name: 'Avatar',
+  component: r => require.ensure([], () => r(domeUrl('Avatar')), 'Avatar'),
+  dome: r => require.ensure([], () => r(compooentUrl('Avatar')), 'Avatar'),
+  meta: {
+    name: "头像"
+  }
+},
+{
+  path: '/BaseCount',
+  name: 'BaseCount',
+  component: r => require.ensure([], () => r(domeUrl('BaseCount')), 'BaseCount'),
+  dome: r => require.ensure([], () => r(compooentUrl('BaseCount')), 'BaseCount'),
+  meta: {
+    name: "基础倒计时"
+  }
+},
 ]
 export default router

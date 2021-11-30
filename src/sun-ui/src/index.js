@@ -16,6 +16,9 @@ import InfiniteScroll from '../packages/InfiniteScroll'
 import mlLazy from '../packages/mlLazy'
 import Utils from '../packages/Utils'
 import Picture from '../packages/Picture'
+import Avatar from '../packages/Avatar'
+import BaseCount from '../packages/BaseCount'
+
 const install = function (Vue) {
   Vue.component(Button.name, Button)
   Vue.component(Cell.name, Cell)
@@ -27,6 +30,8 @@ const install = function (Vue) {
   Vue.component(Loading.name, Loading)
   Vue.component(Switch.name, Switch)
   Vue.component(Popup.name, Popup)
+  Vue.component(Avatar.name, Avatar)
+  Vue.component(BaseCount.name, BaseCount)
 }
 export {
   install,
@@ -44,7 +49,9 @@ export {
   Switch,
   Popup,
   Utils,
-  Picture
+  Picture,
+  Avatar,
+  BaseCount
 }
 if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue)
