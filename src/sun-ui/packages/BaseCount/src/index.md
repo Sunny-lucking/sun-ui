@@ -1,4 +1,4 @@
-## Avatar 头像
+## BaseCounter 倒计时组件
 
 ### 使用指南
 
